@@ -37,7 +37,7 @@ async def amireallyalive(alive):
             f"<b>{EMOJI} PineApple Version :</b> <code>{catversion}</code>\n"
         )
         cat_caption += f"<b>{EMOJI} Database :</b> <code>{check_sgnirts}</code>\n\n"
-        cat_caption += "    <a href = https://github.com/madboy482/PineApple><b>PineApple</b></a> | <a href = https://telegram.me/PineApple_UB><b>Updates</b></a> | <a href = https://telegram.me/PineApple_UB_OnTopic><b>Support</b></a> | <a href = https://telegram.me/PineApple_UB_Spam><b>Spam</b></a>"
+        cat_caption += "<a href = https://github.com/madboy482/PineApple><b>PineApple</b></a> | <a href = https://telegram.me/PineApple_UB><b>Updates</b></a> | <a href = https://telegram.me/PineApple_UB_OnTopic><b>Support</b></a> | <a href = https://telegram.me/PineApple_UB_Spam><b>Spam</b></a>"
         await alive.client.send_file(
             alive.chat_id,
             PINEAPPLE_IMG,
@@ -58,7 +58,7 @@ async def amireallyalive(alive):
             f"<b>{EMOJI} Telethon version :</b> <code>{version.__version__}</code>\n"
             f"<b>{EMOJI} PineApple Version :</b> <code>{catversion}</code>\n"
             f"<b>{EMOJI} Database :</b> <code>{check_sgnirts}</code>\n\n"
-            cat_caption += "    <a href = https://github.com/madboy482/PineApple><b>PineApple</b></a> | <a href = https://telegram.me/PineApple_UB><b>Updates</b></a> | <a href = https://telegram.me/PineApple_UB_OnTopic><b>Support</b></a> | <a href = https://telegram.me/PineApple_UB_Spam><b>Spam</b></a>",
+            cat_caption += "<a href = https://github.com/madboy482/PineApple><b>PineApple</b></a> | <a href = https://telegram.me/PineApple_UB><b>Updates</b></a> | <a href = https://telegram.me/PineApple_UB_OnTopic><b>Support</b></a> | <a href = https://telegram.me/PineApple_UB_Spam><b>Spam</b></a>",
             parse_mode="html",
         )
 
