@@ -23,7 +23,7 @@ if Config.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
 
     @tgbot.on(events.InlineQuery)
     async def inline_handler(event):
-    o = await all_pro_s(Config, client1, client2, client3)
+    o = await all_pro_s(client1, client2, client3)
     builder = event.builder
     result = None
     query = event.text
