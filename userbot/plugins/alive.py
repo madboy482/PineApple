@@ -24,24 +24,24 @@ async def amireallyalive(alive):
     uptime = await get_readable_time((time.time() - StartTime))
     _, check_sgnirts = check_data_base_heal_th()
     if PINEAPPLE_IMG:
-        pineapple_caption = f"<b>{CUSTOM_ALIVE_TEXT}</b>\n\n"
-        pineapple_caption += f"<b>{EMOJI} Master : {ALIVE_NAME}</b>\n"
-        pineapple_caption += f"<b>{EMOJI} Uptime :</b> <code>{uptime}</code>\n"
-        pineapple_caption += (
+        cat_caption = f"<b>{CUSTOM_ALIVE_TEXT}</b>\n\n"
+        cat_caption += f"<b>{EMOJI} Master : {ALIVE_NAME}</b>\n"
+        cat_caption += f"<b>{EMOJI} Uptime :</b> <code>{uptime}</code>\n"
+        cat_caption += (
             f"<b>{EMOJI} Python Version :</b> <code>{python_version()}</code>\n"
         )
-        pineapple_caption += (
+        cat_caption += (
             f"<b>{EMOJI} Telethon version :</b> <code>{version.__version__}</code>\n"
         )
-        pineapple_caption += (
+        cat_caption += (
             f"<b>{EMOJI} PineApple Version :</b> <code>{catversion}</code>\n"
         )
-        pineapple_caption += f"<b>{EMOJI} Database :</b> <code>{check_sgnirts}</code>\n\n"
-        pineapple_caption += "    <a href = https://github.com/madboy482/PineApple><b>PineApple</b></a> | <a href = https://telegram.me/PineApple_UB><b>Updates</b></a> | <a href = https://telegram.me/PineApple_UB_OnTopic><b>Support</b></a> | <a href = https://telegram.me/PineApple_UB_Spam><b>Spam</b></a>"
+        cat_caption += f"<b>{EMOJI} Database :</b> <code>{check_sgnirts}</code>\n\n"
+        cat_caption += "    <a href = https://github.com/madboy482/PineApple><b>PineApple</b></a> | <a href = https://telegram.me/PineApple_UB><b>Updates</b></a> | <a href = https://telegram.me/PineApple_UB_OnTopic><b>Support</b></a> | <a href = https://telegram.me/PineApple_UB_Spam><b>Spam</b></a>"
         await alive.client.send_file(
             alive.chat_id,
             PINEAPPLE_IMG,
-            caption=pineapple_caption,
+            caption=cat_caption,
             parse_mode="html",
             reply_to=reply_to_id,
             link_preview=False,
@@ -58,7 +58,7 @@ async def amireallyalive(alive):
             f"<b>{EMOJI} Telethon version :</b> <code>{version.__version__}</code>\n"
             f"<b>{EMOJI} PineApple Version :</b> <code>{catversion}</code>\n"
             f"<b>{EMOJI} Database :</b> <code>{check_sgnirts}</code>\n\n"
-            pineapple_caption += "    <a href = https://github.com/madboy482/PineApple><b>PineApple</b></a> | <a href = https://telegram.me/PineApple_UB><b>Updates</b></a> | <a href = https://telegram.me/PineApple_UB_OnTopic><b>Support</b></a> | <a href = https://telegram.me/PineApple_UB_Spam><b>Spam</b></a>",
+            cat_caption += "    <a href = https://github.com/madboy482/PineApple><b>PineApple</b></a> | <a href = https://telegram.me/PineApple_UB><b>Updates</b></a> | <a href = https://telegram.me/PineApple_UB_OnTopic><b>Support</b></a> | <a href = https://telegram.me/PineApple_UB_Spam><b>Spam</b></a>",
             parse_mode="html",
         )
 
@@ -70,12 +70,12 @@ async def amireallyalive(alive):
         return
     tgbotusername = Config.TG_BOT_USER_NAME_BF_HER
     reply_to_id = await reply_id(alive)
-    pineapple_caption = f"**PineApple is Up and Running**\n"
-    pineapple_caption += f"**  -Master :** {ALIVE_NAME}\n"
-    pineapple_caption += f"**  -Python Version :** `{python_version()}\n`"
-    pineapple_caption += f"**  -Telethon version :** `{version.__version__}\n`"
-    pineapple_caption += f"**  -PineApple Version :** `{catversion}`\n"
-    results = await bot.inline_query(tgbotusername, pineapple_caption)  # pylint:disable=E0602
+    cat_caption = f"**PineApple is Up and Running**\n"
+    cat_caption += f"**  -Master :** {ALIVE_NAME}\n"
+    cat_caption += f"**  -Python Version :** `{python_version()}\n`"
+    cat_caption += f"**  -Telethon version :** `{version.__version__}\n`"
+    cat_caption += f"**  -PineApple Version :** `{catversion}`\n"
+    results = await bot.inline_query(tgbotusername, cat_caption)  # pylint:disable=E0602
     await results[0].click(alive.chat_id, reply_to=reply_to_id, hide_via=True)
     await alive.delete()
 
