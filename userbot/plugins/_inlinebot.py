@@ -9,7 +9,6 @@ from telethon import Button, custom, events
 
 from . import CMD_LIST, catalive
 from ..Config import Config
-from userbot._init_.py import client2 as client1, client3 as client2, bot as client3
 
 PMPERMIT_PIC = Config.PMPERMIT_PIC or None
 if PMPERMIT_PIC is None:
@@ -23,11 +22,10 @@ if Config.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
 
     @tgbot.on(events.InlineQuery)
     async def inline_handler(event):
-    o = await all_pro_s(client1, client2, client3)
     builder = event.builder
     result = None
     query = event.text
-    if event.query.user_id in o and query.startswith("**PineApple"):
+    if event.query.user_id in query.startswith("**PineApple"):
         rev_text = query[::-1]
         buttons = paginate_help(0, CMD_HELP, "helpme")
         result = builder.article(
@@ -48,7 +46,7 @@ if Config.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             ],
         )
         await event.answer([result])
-    elif event.query.user_id in o and query.startswith("**Hello"):
+    elif event.query.user_id in query.startswith("**Hello"):
         result = builder.photo(
             file=WARN_PIC,
             text=query,
